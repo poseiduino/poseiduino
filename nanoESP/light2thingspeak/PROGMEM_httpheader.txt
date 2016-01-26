@@ -1,0 +1,7 @@
+POST *URL* HTTP/1.1
+Host: api.thingspeak.com
+Connection: close
+Content-Type: application/x-www-form-urlencoded
+Content-Length: *LEN*
+
+*APPEND*
