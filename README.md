@@ -6,6 +6,8 @@ But first, I start with very basic experiments: investigating sensors (photoresi
 
 Find a demo and download the results: https://thingspeak.com/channels/81896
 
+Read my diary at https://github.com/poseiduino/poseiduino/wiki 
+
 Questions: When starts a day? When is a bright sunny day, when is it cloudy? - Furthermore: How do I solder my own shields?    
 
 ## My Setting
