@@ -9,7 +9,7 @@ data = []
 
 def doit(f1val):
     print f1val
-    params = urllib.urlencode({'field3': f1val, 'api_key':'SUBLJLLKQPGFV4IV'})
+    params = urllib.urlencode({'field3': f1val, 'api_key':'YOURAPIKEY'})
     headers = {"Content-type": "application/x-www-form-urlencoded","Accept": "text/plain"}
     conn = httplib.HTTPConnection("api.thingspeak.com")
     conn.request("POST", "/update", params, headers)
@@ -20,7 +20,7 @@ def doit(f1val):
  
 if __name__ == "__main__":
     while True:
-        while (int(time.time()) - currTime  < 16):
+        while (int(time.time()) - currTime  < 60):
             data.append(int(ser.readline()))
         brightnessVal = sum(data) / len(data)
         data = []
