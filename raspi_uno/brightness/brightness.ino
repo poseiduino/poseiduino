@@ -9,6 +9,6 @@ void setup()
 
 void loop()
 {
-    raw = 1023 - analogRead(0);
-    Serial.println(raw);  
+    raw = analogRead(0);
+    Serial.println(raw);
 }
