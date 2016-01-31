@@ -2,13 +2,35 @@
 
 Let's build a submarine! In a bottle.
 
-But first, I start with very basic experiments: investigating sensors (photoresistor), send data to thingspeak.com <http://www.thingspeak.com> (or a self-hosted instance), analyzing data, ... 
+Read my diary at https://github.com/poseiduino/poseiduino/wiki 
+
+# The vision
+
+We send a small submarine underwater, it stays their for a while, takes some data and returns to the surface.
+
+We need a plastic bottle, an arduino, a motor, a servo, and some sensors.
+
+## The Process 
+
+- Set elevator to go down
+- Start motor. The ship goes underwater for 10 seconds 
+- Stop motor.
+- Take data.
+- Set elevator to go up again.
+- Start motor
+- Wait for connected to USB to print data to Serial.
+ 
+## The Laboratory /  The Experiments
+
+I started with very basic experiments: investigating sensors (photoresistor), send data to thingspeak.com <http://www.thingspeak.com> (or a self-hosted instance), analyzing data, ... 
 
 Find a demo and download the results: https://thingspeak.com/channels/81896
 
-Read my diary at https://github.com/poseiduino/poseiduino/wiki 
+## Construction
 
-Questions: When starts a day? When is a bright sunny day, when is it cloudy? - Furthermore: How do I solder my own shields?    
+Done so far: I started soldering my own shields instead of using breadboards. I could minimize the photoresistor setting to a 4x4 dot square. Plan of the circuits follow ...     
+
+Thinking about the bottle ...
 
 ## My Setting
 
@@ -16,13 +38,10 @@ Questions: When starts a day? When is a bright sunny day, when is it cloudy? - F
 * Arduino Uno
 * Raspberry Pi
 
-NanoESPs and Arduino/Raspi are situated in different windows (north, west) of my flat. 
-
 ## Code
 
-Sketches and skripts are slightly revised copies from other tutorials. 
-Compare
-* for NanoESP and Thingspeak: http://iot.fkainka.de/day-19
+Sketches and skripts are slightly revised or combined copies from other tutorials, mainly from arduino.cc . 
+Compare for NanoESP and Thingspeak: http://iot.fkainka.de/day-19
 
 ## Related Github Projects
 
