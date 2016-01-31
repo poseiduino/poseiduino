@@ -19,6 +19,8 @@ We need a plastic bottle, an arduino, a motor, a servo, and some sensors.
 - Set elevator to go up again.
 - Start motor
 - Wait for connected to USB to print data to Serial.
+
+[[https://github.com/poseiduino/poseiduino/wiki/images/poseiduino_dive_sketch.jpg]]
  
 ## The Laboratory /  The Experiments
 
