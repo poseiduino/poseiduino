@@ -13,7 +13,7 @@ We need a plastic bottle, an arduino, a motor, a servo, and some sensors.
 ## The Process 
 
 - Set elevator to go down
-- Start motor. The ship goes underwater for 10 seconds 
+- Start motor. The ship goes underwater. 
 - Stop motor.
 - Take data.
 - Set elevator to go up again.
