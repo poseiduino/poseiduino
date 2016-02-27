@@ -12,7 +12,7 @@ int pos = 0;    // variable to store the servo position
 bool isDown = true;
 bool isUp = false;
 
-int motor = 8;
+int motor = 9;
 int sensorPin = A0;
 
 // EEPROM
@@ -20,8 +20,12 @@ int address = 0;
 byte readValue;
 
 void setup() {
-  elevator.attach(9);
-  pinMode(motor, OUTPUT);
+  //elevator
+  elevator.attach(5);
+  //motor
+  pinMode(12, OUTPUT); //Initiate Motor Channel A pin on motor shield
+  pinMode(motor, OUTPUT); //Initiates Brake Channel A pin on motor shield
+  //eeprom
   Serial.begin(9600);
   while (!Serial) {
     ; // wait for serial port to connect. Needed for native USB port only
@@ -65,7 +69,12 @@ void loop() {
  */
 void startMotor () {
   Serial.println("Running motor ...");
-  digitalWrite(motor, HIGH); 
+  digitalWrite(12, HIGH); //Forward direction of Channel A
+  digitalWrite(motor, LOW);   //Disengage the Brake for Channel A
+  analogWrite(3, 255);   //Motor on Channel A at full speed
+  delay(3000);
+  
+  digitalWrite(9, HIGH);
 }
 
 /*
@@ -74,7 +83,7 @@ void startMotor () {
 
 void turnMotorOff() {
     Serial.println("Turning motor off ...");
-    digitalWrite(motor, LOW);
+    digitalWrite(9, HIGH);
 }
 
 /*
@@ -82,7 +91,7 @@ void turnMotorOff() {
  */
 void elevatorDown() {
   Serial.println("Set elevator to go down ...");
-  for (pos = 0; pos <= 180; pos += 1) { 
+  for (pos = 0; pos <= 75; pos += 1) { 
     elevator.write(pos);              
     delay(15);                       
   }
@@ -94,7 +103,7 @@ void elevatorDown() {
  */
 void elevatorUp () {
   Serial.println("Set elevator to return to surface ...");
-  for (pos = 180; pos >= 0; pos -= 1) { 
+  for (pos = 75; pos >= 0; pos -= 1) { 
     elevator.write(pos);              
     delay(15);                       
   }
