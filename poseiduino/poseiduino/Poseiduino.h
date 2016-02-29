@@ -1,3 +1,14 @@
+/*
+  Poseiduino.h - Library for describing behaviour 
+  and structure of a submarine.
+  Created by poseiduino, February, 2016.
+  Released into the public domain.
+*/
+#ifndef Poseiduino_h
+#define Poseiduino_h
+
+#include "Arduino.h"
+
 class Poseiduino {
   public:
     Poseiduino(int motor);
@@ -10,3 +21,5 @@ class Poseiduino {
   private:
     int _motor;
 };
+
+#endif
