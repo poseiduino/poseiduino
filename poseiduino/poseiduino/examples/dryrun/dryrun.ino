@@ -12,7 +12,8 @@ int pos = 0;    // variable to store the servo position
 bool isDown = true;
 bool isUp = false;
 
-int motor = 9;
+Poseiduino submarine(9);
+//Lab
 int sensorPin = A0;
 
 // EEPROM
@@ -36,30 +37,30 @@ void loop() {
   int state = millis();
   
   if (state < 500 & isDown == false) {
-    elevatorDown();
+    submarine.elevatorDown();
   } 
   
   if (state > 500 & state < 10500 & isDown) {
-    startMotor();
+    submarine.startMotor();
   }
 
   if (state > 11000 & state < 20000) {
-    turnMotorOff();
+    submarine.turnMotorOff();
     delay(1000);
-    takeData();
+    submarine.takeData();
   }
 
   if (state > 21000) {
-    elevatorUp();
+    submarine.elevatorUp();
   }
 
   if (state > 22000 & isUp) {
-    startMotor();
+    submarine.startMotor();
   }
   
   if (state > 35000) {
-    turnMotorOff();
-    writeDataToSerial();
+    submarine.turnMotorOff();
+    submarine.writeDataToSerial();
   }
   
 }
