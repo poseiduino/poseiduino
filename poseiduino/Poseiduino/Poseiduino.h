@@ -8,18 +8,21 @@
 #define Poseiduino_h
 
 #include "Arduino.h"
+#include "Elevator.h"
 
 class Poseiduino {
   public:
-    Poseiduino(int motor);
-    void startMotor();
-    void turnMotorOff();
+    Poseiduino();
+    bool elevatorBlocked = true;
+    void setElevator(Elevator elevator);
     void elevatorDown();
     void elevatorUp();
+    void startMotor();
+    void turnMotorOff();
     void takeData();
     void writeDataToSerial();
   private:
-    int _motor;
+    Elevator _elevator;
 };
 
 #endif
