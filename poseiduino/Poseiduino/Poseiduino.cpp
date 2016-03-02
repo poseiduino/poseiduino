@@ -1,28 +1,41 @@
 #include "Arduino.h"
 #include "Poseiduino.h"
 #include "Elevator.h"
+#include "Engine.h"
 
 Poseiduino::Poseiduino() {
 }
 
-  /*
+/*
+ * Set engine
+ */
+
+void Poseiduino::setEngine(Engine engine) {
+  _engine = engine;  
+}
+
+/*
  * Start the Motor
  */
 void Poseiduino::startMotor () {
-  //Serial.println("Running motor ...");
-  //digitalWrite(12, HIGH); //Forward direction of Channel A
-  //digitalWrite(motor, LOW);   //Disengage the Brake for Channel A
-  //analogWrite(3, 255);   //Motor on Channel A at full speed
-  //delay(3000);
-  //digitalWrite(9, HIGH);
+  engineRuns = true;
+  _engine.start();
+}
+
+/*
+ * Run Motor
+ */
+void Poseiduino::runMotor () {
+  engineRuns = true;
+  _engine.run();
 }
 
 /*
  * Turn motor off
  */
 void Poseiduino::turnMotorOff() {
-    //Serial.println("Turning motor off ...");
-    //digitalWrite(9, HIGH);
+  engineRuns = false;
+  _engine.stop();
 }
 
 /*
