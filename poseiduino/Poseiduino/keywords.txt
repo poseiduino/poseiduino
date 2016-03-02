@@ -1,0 +1,7 @@
+Poseiduino	KEYWORD1
+startMotor	KEYWORD2
+turnMotorOff	KEYWORD2
+elevatorUp	KEYWORD2
+elevatorDown	KEYWORD2
+takeData	KEYWORD2
+writeDataToSerial	KEYWORD2
