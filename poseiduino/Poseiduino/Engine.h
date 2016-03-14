@@ -11,12 +11,19 @@
 
 class Engine {
   public:
-    void activate();
+    virtual void activate() = 0;
     void start();
     void run();
     void stop();
   private:
    int  _pin; 
 };
+
+class MotorShieldEngine : public Engine {
+}
+
+class MosfetEngine : public Engine {
+
+}
 
 #endif
