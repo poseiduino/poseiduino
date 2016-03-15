@@ -10,8 +10,8 @@ Poseiduino::Poseiduino() {
  * Set engine
  */
 
-void Poseiduino::setEngine(Engine engine) {
-  _engine = engine;  
+void Poseiduino::setEngine(Engine &engine) {
+  _engine = &engine;  
 }
 
 /*
@@ -19,7 +19,7 @@ void Poseiduino::setEngine(Engine engine) {
  */
 void Poseiduino::startMotor () {
   engineRuns = true;
-  _engine.start();
+  _engine->start();
 }
 
 /*
@@ -27,7 +27,7 @@ void Poseiduino::startMotor () {
  */
 void Poseiduino::runMotor () {
   engineRuns = true;
-  _engine.run();
+  _engine->run();
 }
 
 /*
@@ -35,7 +35,7 @@ void Poseiduino::runMotor () {
  */
 void Poseiduino::turnMotorOff() {
   engineRuns = false;
-  _engine.stop();
+  _engine->stop();
 }
 
 /*

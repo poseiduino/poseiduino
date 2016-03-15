@@ -19,7 +19,7 @@ class Poseiduino {
     void elevatorDown();
     void elevatorUp();
     bool engineRuns = false;
-    void setEngine(Engine engine);
+    void setEngine(Engine &engine);
     void startMotor();
     void runMotor();
     void turnMotorOff();
@@ -27,7 +27,7 @@ class Poseiduino {
     void writeDataToSerial();
   private:
     Elevator _elevator;
-    Engine _engine;
+    Engine *_engine;
 };
 
 #endif

@@ -5,17 +5,18 @@
  */
 
 #include "Elevator.h"
-#include "Engine.h"
+#include "MosfetEngine.h"
 #include "Poseiduino.h"
 
 
 unsigned long Timer;
 Elevator elevator(5, 75);  
-Engine engine;
+MosfetEngine engine;
 
 Poseiduino submarine;
 
 void setup() {
+  Serial.begin(9600);
   elevator.activate();
   engine.activate();
   submarine.setElevator(elevator);

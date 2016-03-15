@@ -12,18 +12,11 @@
 class Engine {
   public:
     virtual void activate() = 0;
-    void start();
-    void run();
-    void stop();
+    virtual void start() = 0;
+    virtual void run() = 0;
+    virtual void stop() = 0;
   private:
    int  _pin; 
 };
-
-class MotorShieldEngine : public Engine {
-}
-
-class MosfetEngine : public Engine {
-
-}
 
 #endif
