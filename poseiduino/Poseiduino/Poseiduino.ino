@@ -16,7 +16,6 @@ MosfetEngine engine;
 Poseiduino submarine;
 
 void setup() {
-  Serial.begin(9600);
   elevator.activate();
   engine.activate();
   submarine.setElevator(elevator);
